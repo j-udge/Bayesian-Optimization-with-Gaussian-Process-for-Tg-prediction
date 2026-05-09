@@ -34,7 +34,6 @@ train_y = torch.tensor(y_train).contiguous().to(device)
 test_x = torch.tensor(X_test).contiguous().to(device)
 
 # 3. Define the GPyTorch Model
-# This mirrors your sklearn ConstantKernel * Matern(nu=1.5)
 class ExactGPModel(gpytorch.models.ExactGP):
     def __init__(self, train_x, train_y, likelihood):
         super(ExactGPModel, self).__init__(train_x, train_y, likelihood)
